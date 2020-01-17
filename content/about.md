@@ -4,9 +4,11 @@ template: page
 
 ### Site
 
-This is a static site generated with the static site generator Pear. The source
-is stored in [Github](https://github.com/uzluisf/pear-doc). The site is
-manually rebuilt and then pushed to Github. 
+This is a static site generated with Pear. The source for both the raw files
+(`source` branch) and the site's HTML (`master` branch) is stored in
+[Github](https://github.com/uzluisf/pear-doc). The site is build using a Bash
+script that renders the site (using `pear render`) from the `source` branch
+and pushes the generated HTML to the `master` branch.
 
 The theme is based on a [Hugo theme](https://themes.gohugo.io/theme/hugo-whisper-theme/).
 
