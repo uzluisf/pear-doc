@@ -42,7 +42,7 @@ params:
     homepage-intro: "Pear is a simple static site generator written in Raku."
     footer:
         - name: pear
-          url : raku.org
+          url : "#"
     logo:
         standard: "/images/logo.svg"
  
