@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Pear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://uzluisf.github.io/pear-doc/include/images/favicon.png">
+
+  <link rel="stylesheet" href="https://uzluisf.github.io/pear-doc/include/css/style.css">
+  <link rel="stylesheet" href="https://uzluisf.github.io/pear-doc/include/css/custom.css">
+</head>
+
+<body class='page page-default-list'>
+<div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    <li class="menu-item-Home">
+      <a href=""><span>Home</span></a>
+    </li>
+    <li class="menu-item-Docs">
+      <a href="docs/"><span>Docs</span></a>
+    </li>
+    <li class="menu-item-About">
+      <a href="about/"><span>About</span></a>
+    </li>
+  </ul>
+</div>
+<div class="wrapper">
+  <div class='header'>
+    <div class="container">
+  
+      <div class="logo">
+        <a href="https://uzluisf.github.io/pear-doc/"><img alt="Logo" src="https://uzluisf.github.io/pear-doc/include/images/logo.svg"/></a>
+      </div>
+  
+      <div class="logo-mobile">
+        <a href="https://uzluisf.github.io/pear-doc/"><img alt="Logo" src="https://uzluisf.github.io/pear-doc/include/images/logo.svg"/></a>
+      </div>
+      
+      <!-- Header navigation -->
+      <div id="main-menu" class="main-menu">
+        <ul>
+          <li class="menu-item-Home">
+          <a href="https://uzluisf.github.io/pear-doc/"><span>Home</span></a>
+          </li>
+          <li class="menu-item-Docs">
+          <a href="https://uzluisf.github.io/pear-doc/docs/"><span>Docs</span></a>
+          </li>
+          <li class="menu-item-About">
+          <a href="https://uzluisf.github.io/pear-doc/about/"><span>About</span></a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Hamburger -->
+      <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+    </div>
+  </div>
+  
+  
+  <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3"><div class="sidebar"><div class="docs-menu">
+
+<h4>Docs</h4>
+<ul>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/quickstart/">Quickstart</a></li>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/command-line/">Command line</a></li>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/config/">Config</a></li>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/templates/">Templates</a></li>
+</ul>
+<h4>News</h4>
+<ul>
+<li><a href="https://uzluisf.github.io/pear-doc/posts/">Latest posts</a></li>
+</ul>
+</div>
+</div></div>
+      <div class="col-12 col-md-9">
+        <h1 class="title">Templates</h1>
+        <div class="content">
+            <h1>Globals</h1><h2>site</h2><p>User-defined data from the configuration file (e.g., <code>config.yaml</code>). By default, <code>site</code> includes the following variables:</p><ul><li><p><code>include</code>, list of directories under the directory for static files specified   in the YAML configuration file. Note that this is always named <code>include</code>   regardless of the name specified in the configuration file for the include   directory.</p></li><li><p><code>time</code>, the time at the moment <code>pear</code> is executed in the site's root   directory.</p></li></ul><h2>page</h2><p>Information about a page (e.g., <code>page.title</code>). A post and a tag outside the global variables <code>posts</code> and <code>tags</code> respectively are considered regular pages. Thus, this means a page might contain more attributes than the ones mentioned below (See <code>post</code> and <code>tag</code> for their own respective attributes):</p><ul><li><code>content</code>, the post's HTML content.</li></ul><h2>posts</h2><p>List of all the blog posts. See <code>post</code> for a post's attributes.</p><h2>tags</h2><p>List of tags from the blog posts. See <code>tag</code> for a tag's attributes.</p><h1>Locals</h1><p>The following variables are accessible only via global variables:</p><h2>post</h2><p>Information about a given post and only accessible when iterating over the global variable <code>posts</code>. A post contains the following attributes:</p><ul><li><code>content</code>, the post's HTML content (e.g., <code>&lt;h2&gt;Say&#39;s Phoebe&lt;/h2&gt;</code>).</li><li><code>url</code>, the post's url (e.g., <code>09/23/2019/dark-secondaries</code>).</li><li><code>id</code>, the post's identifier (same as <code>url</code>).</li><li><code>next</code>, the next post from current post.</li><li><code>previous</code>, the previous post from current post.</li><li><p><code>tags</code>, the tags associated with the post. See <code>tag</code> for the attributes a tag   holds.</p></li><li><p><code>template</code>, the template with which the post is rendered. Note that each post   must specify a template.</p></li><li><p><code>date</code>, the post's date. Its format must be <code>yyyy-mm-dd</code>. Nonetheless, you can   change its formatting by specifying the preferred format. The date format is   based on <code>strftime</code>'s directives; there's a reference for it at   https://strftime.org/ and for live preview at http://www.strftime.net/. For   date in the page's metadata, there are the following options:   1) <code>date: 2019-12-25</code>, if not format specified in the the configuration file   (with <code>date-format</code>), then the default format <code>%b %d, %Y</code> will be used and   2) <code>date: [2019-12-25, %Y/%m/%d]</code>, format date according to given format.</p></li><li><p><code>draft</code>, is the post a draft? If set to <code>true</code>, the post won't appear in   the generated HTML for the site.</p></li></ul><p>All the other attributes in a post's frontmatter will be included alongside the attributes discussed earlier.</p><h2>tag</h2><p>Information about a tag and only accessible when iterating over the global variable <code>tags</code>. A tag contains the following attributes:</p><ul><li><code>name</code>, the tag's name (e.g, <code>linux</code>).</li><li><code>url</code>, the tag's url (e.g., <code>/tags/linux</code>).</li><li><code>posts</code>, the list of posts associated to that tag.</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          <ul>
+                <li><a href="#">pear</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+ <script src="https://uzluisf.github.io/pear-doc/include/js/toggle.js"></script>
+</footer>
+
+</body>
+
+</html>
+

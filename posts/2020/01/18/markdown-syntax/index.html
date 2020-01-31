@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Pear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://uzluisf.github.io/pear-doc/include/images/favicon.png">
+
+  <link rel="stylesheet" href="https://uzluisf.github.io/pear-doc/include/css/style.css">
+  <link rel="stylesheet" href="https://uzluisf.github.io/pear-doc/include/css/custom.css">
+</head>
+
+<body class='page page-default-list'>
+<div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    <li class="menu-item-Home">
+      <a href=""><span>Home</span></a>
+    </li>
+    <li class="menu-item-Docs">
+      <a href="docs/"><span>Docs</span></a>
+    </li>
+    <li class="menu-item-About">
+      <a href="about/"><span>About</span></a>
+    </li>
+  </ul>
+</div>
+<div class="wrapper">
+  <div class='header'>
+    <div class="container">
+  
+      <div class="logo">
+        <a href="https://uzluisf.github.io/pear-doc/"><img alt="Logo" src="https://uzluisf.github.io/pear-doc/include/images/logo.svg"/></a>
+      </div>
+  
+      <div class="logo-mobile">
+        <a href="https://uzluisf.github.io/pear-doc/"><img alt="Logo" src="https://uzluisf.github.io/pear-doc/include/images/logo.svg"/></a>
+      </div>
+      
+      <!-- Header navigation -->
+      <div id="main-menu" class="main-menu">
+        <ul>
+          <li class="menu-item-Home">
+          <a href="https://uzluisf.github.io/pear-doc/"><span>Home</span></a>
+          </li>
+          <li class="menu-item-Docs">
+          <a href="https://uzluisf.github.io/pear-doc/docs/"><span>Docs</span></a>
+          </li>
+          <li class="menu-item-About">
+          <a href="https://uzluisf.github.io/pear-doc/about/"><span>About</span></a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Hamburger -->
+      <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+    </div>
+  </div>
+  
+  
+  <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3"><div class="sidebar"><div class="docs-menu">
+
+<h4>Docs</h4>
+<ul>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/quickstart/">Quickstart</a></li>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/command-line/">Command line</a></li>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/config/">Config</a></li>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/templates/">Templates</a></li>
+</ul>
+<h4>News</h4>
+<ul>
+<li><a href="https://uzluisf.github.io/pear-doc/posts/">Latest posts</a></li>
+</ul>
+</div>
+</div></div>
+      <div class="col-12 col-md-9">
+        <h1 class="title">Markdown Syntax Guide</h1>
+        <div class="content">
+            <p>This post offers a sample of basic Markdown syntax that can be used in Pear content files.</p><h2>Headers</h2><p>The following HTML <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> elements represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level while <code>&lt;h6&gt;</code> is the lowest.</p><pre><code># H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6</code></pre><h2>Paragraph</h2><p>A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line — a line containing nothing but spaces or tabs is considered blank). Normal paragraphs should not be indented with spaces or tabs.</p><p><a href="https://daringfireball.net/projects/markdown/syntax#p">More about paragraphs</a>.</p><h2>Blockquotes</h2><p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a <code>footer</code> or <code>cite</code> element, and optionally with in-line changes such as annotations and abbreviations. Markdown uses email-style <code>&gt;</code> characters for blockquoting. For instance:</p><pre><code>&gt; This is a witty quote because I deem it so.</code></pre><p>might be rendered as</p><blockquote><p>This is a witty quote because I deem it so.</p></blockquote><h2>Tables</h2><p>Tables aren't part of the core Markdown spec. However, you can always drop HTML into a Markdown file.</p><pre><code>&lt;table style=&quot;width:100%&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Firstname&lt;/th&gt;
+    &lt;th&gt;Lastname&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Jill&lt;/td&gt;
+    &lt;td&gt;Smith&lt;/td&gt;
+    &lt;td&gt;50&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Eve&lt;/td&gt;
+    &lt;td&gt;Jackson&lt;/td&gt;
+    &lt;td&gt;94&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre><p>might render as</p><table style="width:100%">   <tr>     <th>Firstname</th>     <th>Lastname</th>     <th>Age</th>   </tr>   <tr>     <td>Jill</td>     <td>Smith</td>     <td>50</td>   </tr>   <tr>     <td>Eve</td>     <td>Jackson</td>     <td>94</td>   </tr> </table><h2>List Types</h2><h4>Ordered List</h4><p>1. First item</p><p>2. Second item</p><p>3. Third item</p><h4>Unordered List</h4><ul><li><p>List item</p></li><li><p>Another item</p></li><li><p>And another item</p></li></ul><h2>Code Blocks</h2><p>To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab. For example, given this input:</p><pre><code>    sub multiplier(Int $times, *@numbers) &#123;
+        @numbers.map(* * $times)
+    &#125;
+    my &amp;triple = &amp;multiplier.assuming(3, *);
+    say &amp;triple(5, 7, 9);     #=&gt; (15 21 27)</code></pre><p>Markdown will generate:</p><pre><code>&lt;pre&gt;&lt;code&gt;sub multiplier(Int $times, *@numbers) &#123;
+        @numbers.map(* * $times)
+    &#125;
+    my &amp;amp;triple = &amp;amp;multiplier.assuming(3, *);
+    say &amp;amp;triple(5, 7, 9);     #=&amp;gt; (15 21 27)
+&lt;/code&gt;&lt;/pre&gt;</code></pre><h2>Other Elements — abbr, sub, sup, kbd, mark</h2><p><abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.</p><p>H<sub>2</sub>O</p><p>X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></p><p>Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.</p><p>Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.</p><hr><p>For a more in-depth overview of Markdown syntax, read John Gruber's <a href="https://daringfireball.net/projects/markdown/syntax">Markdown Syntax</a>. Gruber is the creator of Markdown.</p><p>It's worth noting that implementations of Markdown may vary across the board with some only supporting the original Markdown spec and others adding new features (e.g., support for tables, fenced code blocks, etc.).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          <ul>
+                <li><a href="#">pear</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+ <script src="https://uzluisf.github.io/pear-doc/include/js/toggle.js"></script>
+</footer>
+
+</body>
+
+</html>
+

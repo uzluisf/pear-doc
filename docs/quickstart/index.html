@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Pear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://uzluisf.github.io/pear-doc/include/images/favicon.png">
+
+  <link rel="stylesheet" href="https://uzluisf.github.io/pear-doc/include/css/style.css">
+  <link rel="stylesheet" href="https://uzluisf.github.io/pear-doc/include/css/custom.css">
+</head>
+
+<body class='page page-default-list'>
+<div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    <li class="menu-item-Home">
+      <a href=""><span>Home</span></a>
+    </li>
+    <li class="menu-item-Docs">
+      <a href="docs/"><span>Docs</span></a>
+    </li>
+    <li class="menu-item-About">
+      <a href="about/"><span>About</span></a>
+    </li>
+  </ul>
+</div>
+<div class="wrapper">
+  <div class='header'>
+    <div class="container">
+  
+      <div class="logo">
+        <a href="https://uzluisf.github.io/pear-doc/"><img alt="Logo" src="https://uzluisf.github.io/pear-doc/include/images/logo.svg"/></a>
+      </div>
+  
+      <div class="logo-mobile">
+        <a href="https://uzluisf.github.io/pear-doc/"><img alt="Logo" src="https://uzluisf.github.io/pear-doc/include/images/logo.svg"/></a>
+      </div>
+      
+      <!-- Header navigation -->
+      <div id="main-menu" class="main-menu">
+        <ul>
+          <li class="menu-item-Home">
+          <a href="https://uzluisf.github.io/pear-doc/"><span>Home</span></a>
+          </li>
+          <li class="menu-item-Docs">
+          <a href="https://uzluisf.github.io/pear-doc/docs/"><span>Docs</span></a>
+          </li>
+          <li class="menu-item-About">
+          <a href="https://uzluisf.github.io/pear-doc/about/"><span>About</span></a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Hamburger -->
+      <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+    </div>
+  </div>
+  
+  
+  <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3"><div class="sidebar"><div class="docs-menu">
+
+<h4>Docs</h4>
+<ul>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/quickstart/">Quickstart</a></li>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/command-line/">Command line</a></li>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/config/">Config</a></li>
+<li><a href="https://uzluisf.github.io/pear-doc/docs/templates/">Templates</a></li>
+</ul>
+<h4>News</h4>
+<ul>
+<li><a href="https://uzluisf.github.io/pear-doc/posts/">Latest posts</a></li>
+</ul>
+</div>
+</div></div>
+      <div class="col-12 col-md-9">
+        <h1 class="title">Quickstart</h1>
+        <div class="content">
+            <p>The goal of this guide is to get you up and running quickly with Pear.</p><h1>Installation</h1><p>For now, Pear must be installed from source. To install from source, follow these commands:</p><pre><code>$ git clone https://github.com/hunter-classes/winter-2020-codefest-submissions-phoebe.git
+$ cd winter-2020-codefest-submissions-phoebe
+$ zef install .</code></pre><p>After Pear has been installed, run <code>pear</code> to confirm everything completed successfully. If everything went fine, then the usage message should be printed to the terminal. You can also display the usage message with <code>pear --help</code>.</p><h1>Directory structure</h1><h2>The content directory</h2><p>The content directory is where all the documents (posts, other pages, etc.) for the website live. Under this directory, Pear recognizes anything under a <code>posts</code> directory as a post. Everything else is a page which include files and other directories directly under the content directory.</p><p>It's specified as <code>content: your-content-dir</code> in the YAML configuration file. See <a href="https://uzluisf.github.io/pear-doc/docs/config/">Config</a> for more information.</p><h2>The template directory</h2><p>The template directory is used to store the Mustache templates. This directory must contain a directory named <code>partials</code> which contains the partial templates.</p><p>It's specified as <code>template: your-template-dir</code> in the YAML configuration file. See <a href="https://uzluisf.github.io/pear-doc/docs/config/">Config</a> for more information.</p><h2>The include directory</h2><p>The include directory is used for all the static files such as images, CSS files, JS files, etc.</p><p>It's specified as <code>template: your-include-dir</code> in the YAML configuration file. See <a href="https://uzluisf.github.io/pear-doc/docs/config/">Config</a> for more information.</p><p>It's worth noting that regardless how the include directory is named, Pear always makes it available to the templates in the global variable <code>site</code> as <code>site.include</code>. See <a href="https://uzluisf.github.io/pear-doc/docs/templates/">Templates</a> for more information.</p><h2>The output directory</h2><p>The output directory contains the generated HTML for the site.</p><p>It's specified as <code>template: your-output-dir</code> in the YAML configuration file. See <a href="https://uzluisf.github.io/pear-doc/docs/config/">Config</a> for more information.</p><h1>Configuration</h1><p>The configuration of Pear is handled by a single file at the root of your project, <code>config.yaml</code>. If the file doesn't exist at the moment <code>pear</code> is run, then one will be created with some default settings.</p><p>One powerful thing about Pear's configuration file, is that everything in it, Pear setting or not, is made available to templates. This can be taken advantage of in many ways. For example, you could add a title or author attribute for use in templates and then if you ever need to change that information, all you have to do is update it in your site's config rather than in every template.</p><p>This also means that the templates must be organized according to how the data is made available in the configuration file.</p><h1>Templates</h1><p>With your site set up and a general sense of how a Pear site is structured, let's move on to templates.</p><p>In the case of this guide (and also by default) the renderer used is Mustache. Basically, a renderer takes care of knitting the data from the pages and any additional data from the configuration file into whatever structure a template dictates. If you're not already familiar with Mustache, give the <a href="https://mustache.github.io/">Mustache</a> documentation a quick read.</p><p>You can find the source files for this site at <a href="https://github.com/uzluisf/pear-doc/tree/source">Github</a> where you'll find a <code>templates</code> directory used to render the site's content into HTML.</p><h2>Globals</h2><p>Template globals are variables containing site data that are made available to every template. There are four template globals: <code>site</code>, <code>posts</code>, <code>page</code>, and <code>tags</code>.</p><h1>Posts</h1><p>As mentioned above, Pear picks up posts from a directory named <code>posts</code> under the content directory. Both hidden files and directories under <code>posts</code> will be ignored.</p><p>A post's filename can be named anything. However, keep in mind that a post's filename will also determine the post's url. A post's url will be dictated by the post's date and its filename (<code>/2020/01/01/hello</code>).</p><h2>YAML frontmatter</h2><p>The YAML frontmatter is a block of YAML fenced by three dashes at the start of a post containing the post's metadata. It looks as follows:</p><pre><code>---
+template: post
+date: 2020-01-01
+---</code></pre><p>Every post <strong>requires</strong> a YAML frontmater with the <code>template</code> attribute set. The <code>template</code> attribute tells Pear which template in the templates directory it should use to render the post. If a post doesn't specify a template, the template specified in the post isn't in the template directory, or the post specifies more than a single template, then the post won't be rendered correctly. </p><p>There are few other attributes that have a special meaning in the YAML frontmatter:</p><ul><li><p><code>date</code>, the post's date. Its format must be <code>yyyy-mm-dd</code>. Nonetheless, you can   change its formatting by specifying the preferred format. The date format is   based on <code>strftime</code>'s directives; there's a reference for it at   https://strftime.org/ and for live preview at http://www.strftime.net/. For   date in the page's frontmater, there are two choices: 1) <code>date: 2019-12-25</code>,   if not format specified in the the configuration file (with <code>date-format</code>),   then the default format <code>%b %d, %Y</code> will be used and   2) <code>date: [2019-12-25, %Y/%m/%d]</code>, date is formatted according to the given format.</p></li><li><code>draft</code>, is the post a draft? If set to <code>true</code>, the post won't appear in the</li></ul><p>generated HTML for the site.</p><ul><li><code>tags</code>, a list of tags for the post.</li></ul><h1>Tagging</h1><p>With templates and posts covered, let's move on to how Pear handles tagging.</p><p>Let's start by noting that Pear collects and generates tags only from posts. To tag a post, simply add the <code>tags</code> attribute to the YAML frontmatter containing a list of the desired tags.</p><pre><code>---
+title: An example post
+date: 2020/01/02
+template: post
+tags: [Foo, pear, tagging]
+---</code></pre><p>Once a post has been tagged, this change is reflected in a couple of ways. First, all of a post's tags will be available via a <code>tags</code> attribute. Second, that post will be added to each <code>tag</code> in the <code>tags</code> property of the global  variable <code>posts</code>.</p><p>From all the tags, Pear will create a directory named <code>tags</code> directly under the site's root. This directory contains the tags collected from all the posts and it's made available to templates as the global variable <code>tags</code>.</p><h1>Pages</h1><p>Lastly, we have pages. Any file outside the <code>posts</code> directory in the content  directory is a page. Only files and files under other directories in the content directory are rendered. Hidden files and other directories are ignored. For instance, from the following file structure for the content directory:</p><pre><code>content
+│
+├── about.md
+├── posts
+│   ├── hello.md
+│   └── blog
+├── index.md
+├── .ignore-me.md
+├── docs
+│   ├── example.md
+│   ├── blog
+│   │   ├── hello.md
+│   │   └── blog
+│   └── config.md
+└── misc.md</code></pre><p>Neither anything under <code>content/docs/blog/</code> nor the file <code>.ignore-me.md</code> will be rendered into a HTML page. Only files directly under <code>content</code> and files at the root of any directory under the <code>content</code> directory (e.g., <code>docs/example.md</code> and <code>docs/config.md</code>).</p><h1>Generation</h1><p>Now that we have the basics covered, it's time to generate your site.</p><p>Generating a Pear site is handled by the command <code>render</code> which will generates the site into the output directory and immediately exit. </p><pre><code>$ pear render</code></pre><p>To serve the generated site, you can use the <code>serve</code> command. To view your site open your browser to http://localhost:3000/.</p><pre><code>$ pear serve</code></pre><p>If you want to re-generate the site and also serve it, you can use the <code>watch</code> command.</p><pre><code>$ pear watch</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          <ul>
+                <li><a href="#">pear</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+ <script src="https://uzluisf.github.io/pear-doc/include/js/toggle.js"></script>
+</footer>
+
+</body>
+
+</html>
+
